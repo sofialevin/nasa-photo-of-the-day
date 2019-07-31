@@ -1,11 +1,12 @@
 import React from "react";
 
-const Description = () => {
+const Description = (props) => {
   
   return (
     <div>
       {
           <p>
+              {props.description}
          </p>
       }
     </div>

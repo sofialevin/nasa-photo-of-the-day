@@ -1,11 +1,11 @@
 import React from "react";
 
-const Image = () => {
+const Image = (props) => {
   
   return (
     <div>
       {
-          <img />
+        <img src={props.imageURL} alt=""/>
       }
     </div>
   );

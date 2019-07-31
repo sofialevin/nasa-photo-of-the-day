@@ -1,12 +1,11 @@
 import React from "react";
 
-const Date = () => {
+const Date = (props) => {
   
   return (
     <div>
       {
-          <time>
-         </time>
+          <time>{props.date}</time>
       }
     </div>
   );

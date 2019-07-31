@@ -1,11 +1,12 @@
 import React from "react";
 
-const Copyright = () => {
+const Copyright = (props) => {
   
   return (
     <div>
       {
           <p>
+              {props.copyright}
          </p>
       }
     </div>

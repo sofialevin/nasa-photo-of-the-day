@@ -7,16 +7,16 @@ import Description from "./Description";
 import Date from "./Date";
 import Copyright from "./Copyright";
 
-const ImageDetails = () => {
+const ImageDetails = (props) => {
   
   return (
     <div>
       {
           <div>
-            <Title />
-            <Description />
-            <Date />
-            <Copyright />
+            <Title title={props.imageTitle}/>
+            <Date date={props.imageDate}/>
+            <Description description={props.imageDescription}/>
+            <Copyright copyright={props.imageCopyright}/>
          </div>
       }
     </div>
