@@ -1,7 +1,7 @@
 import React from "react";
 
 const Image = (props) => {
-  
+if (!props.imageURL) return <div className='spinner' />
   return (
     <div>
       {

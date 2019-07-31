@@ -23,10 +23,12 @@ function App() {
         setDescription(result.data.explanation);
         setCopyright(result.data.copyright);
       })
+      .catch(error => console.log(error))
   }, [])
 
   return (
     <div className="App">
+      <h1>NASA Image of the Day</h1>
       <Image imageURL={image}/>
       <ImageDetails imageDate={date} imageTitle={title} imageDescription={description} imageCopyright={copyright}/>
     </div>
