@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
+import { Card, Image} from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
+import styled from 'styled-components';
 
-import ImageDetails from "./components/ImgDetails/ImageDetails";
-import Image from "./components/Image";
+import Title from "./components/Title"
+import Description from "./components/Description";
+import Date from "./components/Date";
+import Copyright from "./components/Copyright";
+
+const WrapperDiv = styled.div`
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+`;
 
 function App() {
   const [image, setImage] = useState();
@@ -28,9 +42,18 @@ function App() {
 
   return (
     <div className="App">
-      <h1>NASA Image of the Day</h1>
-      <Image imageURL={image}/>
-      <ImageDetails imageDate={date} imageTitle={title} imageDescription={description} imageCopyright={copyright}/>
+      <WrapperDiv>
+        <h1>NASA Image of the Day</h1>
+        <Card fluid>
+          <Image src={image}/>
+          <Card.Content>
+            <Title title={title}/>
+            <Date date={date} />
+            <Description description={description} />
+          </Card.Content>
+          <Copyright copyright={copyright} />
+        </Card>
+      </WrapperDiv>
     </div>
   );
 }
